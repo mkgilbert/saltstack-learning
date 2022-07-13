@@ -1,0 +1,7 @@
+[Unit]
+Description=Perform initial boot setup
+[Service]
+Type=simple
+ExecStart=/firstboot.sh
+[Install]
+WantedBy=multi-user.target
