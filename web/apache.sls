@@ -20,14 +20,14 @@ ensure_apache_is_running:
 copy index.html file:
   file.managed:
     - name: /var/www/html/index.html
-    - source: salt://webserver/index.html
+    - source: salt://index.html
     - require:
       - ensure_apache_is_running
 
 sync mod_status.conf:
   file.managed:
     - name: /etc/apache2/mods-enabled/mod_status.conf
-    - source: salt://webserver/mod_status.conf
+    - source: salt://mod_status.conf
     - user: root
     - group: root
     - mode: 600
@@ -35,7 +35,7 @@ sync mod_status.conf:
 sync mod_status.load:
   file.managed:
     - name: /etc/apache2/mods-enabled/mod_status.load
-    - source: salt://webserver/mod_status.load
+    - source: salt://mod_status.load
     - user: root
     - group: root
     - mode: 600
